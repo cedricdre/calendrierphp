@@ -1,0 +1,24 @@
+body {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  background-color: #212529;
+  color: white;
+}
+.day {
+  width: 14.28%;
+  padding: 1.2rem 0rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight:700;
+  border-bottom: 1px solid #495057;
+}
+.day-off {
+  color: #495057;
+}
+
+.abril-font {
+  font-family: 'Abril Fatface', serif;
+}
+
+/* .day:hover {
+  background-color:  #1B1F22;
+} */
