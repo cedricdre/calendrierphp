@@ -28,18 +28,9 @@ $formatter->setPattern('MMMM');
 $frenchDate = $formatter->format($day);
 
 $dayofday = new DateTime();
-$dayofdayDisplay = $dayofday->format('j');
-var_dump($dayofdayDisplay);
-
-//Jours fériés
-$newYearsDay = new DateTime('January 1');
-$newYearsDayDisplay = $newYearsDay->format('j');
-
-// $newYearsDay = date('j', strtotime('January 1'));
-var_dump($newYearsDayDisplay);
+$dayofdayDisplay = $dayofday->format('Y-n-j');
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -109,12 +100,9 @@ var_dump($newYearsDayDisplay);
                             <?php
                             for ($dayInMonth = 1; $dayInMonth <= $daysInMonth; $dayInMonth++) {
 
-                                if ($dayInMonth == $dayofdayDisplay) {
+                                $dayStyle = "$year-$month-$dayInMonth";
+                                if ($dayofdayDisplay == $dayStyle) {                         
                                     $classRed = 'text-danger border-botom border-danger';
-                                } elseif ($dayInMonth == $newYearsDayDisplay) {
-                                    $classRed = 'text-danger';
-                                } else {
-                                    $classRed = 'text-light';
                                 }
                             ?>
                                 <div class='col day <?= $classRed ?>'><?= $dayInMonth ?></div>
@@ -128,7 +116,6 @@ var_dump($newYearsDayDisplay);
                             ?>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
